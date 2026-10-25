@@ -181,8 +181,8 @@ meuEstado: { frames: [['frame_a', 200], ['frame_b', 200]], next: 'idle' },
 Precisa do [Node.js](https://nodejs.org) 20 ou mais novo.
 
 ```bash
-git clone https://github.com/SEU_USUARIO/MascotAI.git
-cd MascotAI
+git clone https://github.com/CodigoRoxo/MascotAI-Purpo.git
+cd MascotAI-Purpo
 npm install
 npm start
 ```
@@ -241,4 +241,4 @@ Ideias e sugestões são bem-vindas nas [Issues](../../issues).
 
 ---
 
-Feito por **Matheus Franco**, do canal [Código Roxo](LINK_DO_CANAL).
+Feito por **Matheus Franco**, do canal **Código Roxo** ([GitHub](https://github.com/CodigoRoxo)).
