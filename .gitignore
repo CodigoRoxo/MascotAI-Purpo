@@ -1,0 +1,10 @@
+node_modules/
+dist/
+
+# rascunho antigo
+sprite_base.png
+
+.claude/
+.vscode/
+.DS_Store
+Thumbs.db

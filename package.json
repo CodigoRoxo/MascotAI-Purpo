@@ -1,0 +1,51 @@
+{
+  "name": "mascotai",
+  "productName": "MascotAI",
+  "version": "0.1.0",
+  "description": "Um mascote de IA local que fica no canto da tela",
+  "author": "Matheus Franco (Código Roxo)",
+  "license": "MIT",
+  "main": "main/main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win"
+  },
+  "devDependencies": {
+    "electron": "^33.2.0",
+    "electron-builder": "^25.1.8"
+  },
+  "allowScripts": {
+    "electron@33.4.11": true
+  },
+  "build": {
+    "appId": "com.codigoroxo.mascotai",
+    "productName": "MascotAI",
+    "files": [
+      "main/**",
+      "src/**",
+      "assets/sprites/**",
+      "package.json"
+    ],
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "win": {
+      "icon": "build/icon.ico",
+      "target": [
+        "nsis",
+        "portable"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "shortcutName": "MascotAI",
+      "artifactName": "MascotAI-Setup-${version}.${ext}"
+    },
+    "portable": {
+      "artifactName": "MascotAI-${version}-portable.${ext}"
+    }
+  }
+}

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'" />
+  <title>MascotAI</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="stage">
+    <div id="chat" class="hit hidden">
+      <button id="chat-close" title="Fechar conversa">×</button>
+      <div id="messages"></div>
+    </div>
+
+    <canvas id="pet" class="hit"></canvas>
+
+    <div id="pill" class="hit hidden">
+      <button id="pill-edit" class="icon-btn" title="Escrever">
+        <svg viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16v4z M14 6l4 4" /></svg>
+      </button>
+      <span class="divider"></span>
+      <button id="pill-voice" class="icon-btn" title="Voz (em breve)" disabled>
+        <svg viewBox="0 0 24 24"><path d="M6 10v4 M10 6v12 M14 8v8 M18 11v2" /></svg>
+      </button>
+      <span class="divider"></span>
+      <button id="pill-settings" class="icon-btn" title="Configurações">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3" /><path d="M12 2v3 M12 19v3 M2 12h3 M19 12h3 M4.9 4.9l2.1 2.1 M17 17l2.1 2.1 M4.9 19.1L7 17 M17 7l2.1-2.1" /></svg>
+      </button>
+    </div>
+
+    <form id="prompt" class="hit hidden" autocomplete="off">
+      <button type="button" id="prompt-new" class="icon-btn round" title="Novo chat">+</button>
+      <input id="prompt-input" type="text" placeholder="Iniciar novo chat" spellcheck="false" />
+      <button type="submit" id="prompt-send" class="icon-btn round send" title="Enviar" disabled>
+        <svg viewBox="0 0 24 24"><path d="M12 19V5 M6 11l6-6 6 6" /></svg>
+      </button>
+    </form>
+  </div>
+
+  <script src="pet.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'" />
+  <title>MascotAI — Configurações</title>
+  <link rel="stylesheet" href="settings.css" />
+</head>
+<body>
+  <nav id="sidebar">
+    <img class="logo" src="../assets/sprites/frames/face_eyes.png" alt="MascotAI" />
+
+    <button class="tab active" data-tab="mascot" data-tip="Mascote">
+      <svg viewBox="0 0 24 24"><rect x="4" y="7" width="16" height="11" rx="2" /><path d="M9 11v2 M15 11v2 M8 18v2 M16 18v2 M10 4l2 2 2-2" /></svg>
+    </button>
+    <button class="tab" data-tab="ai" data-tip="Inteligência">
+      <svg viewBox="0 0 24 24"><path d="M12 3l1.8 4.7L18.5 9.5 13.8 11.3 12 16l-1.8-4.7L5.5 9.5l4.7-1.8z M18 15l.9 2.1L21 18l-2.1.9L18 21l-.9-2.1L15 18l2.1-.9z" /></svg>
+    </button>
+    <button class="tab" data-tab="download" data-tip="Baixar modelos">
+      <svg viewBox="0 0 24 24"><path d="M12 4v11 M7 10l5 5 5-5 M5 19h14" /></svg>
+    </button>
+    <button class="tab" data-tab="persona" data-tip="Personalidade">
+      <svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z M8 9h8 M8 12h5" /></svg>
+    </button>
+    <button class="tab" data-tab="memory" data-tip="Memória">
+      <svg viewBox="0 0 24 24"><path d="M5 4h11l3 3v13H5z M9 9h6 M9 13h6 M9 17h4" /></svg>
+    </button>
+    <button class="tab" data-tab="advanced" data-tip="Avançado">
+      <svg viewBox="0 0 24 24"><path d="M4 7h10 M18 7h2 M4 17h2 M10 17h10" /><circle cx="16" cy="7" r="2" /><circle cx="8" cy="17" r="2" /></svg>
+    </button>
+  </nav>
+
+  <main>
+    <header id="titlebar">
+      <div>
+        <h1 id="tab-title"></h1>
+        <p id="tab-sub" class="muted"></p>
+      </div>
+      <span id="saved" class="saved">Salvo ✓</span>
+      <div class="win-btns">
+        <button id="win-min" title="Minimizar"><svg viewBox="0 0 24 24"><path d="M6 12h12" /></svg></button>
+        <button id="win-close" class="close" title="Fechar"><svg viewBox="0 0 24 24"><path d="M7 7l10 10 M17 7L7 17" /></svg></button>
+      </div>
+    </header>
+
+    <!-- ---------- Mascote ---------- -->
+    <section class="panel active" data-panel="mascot" data-title="Mascote" data-sub="Como ele aparece na sua tela">
+      <div class="mascot-grid">
+        <div class="preview">
+          <img id="preview-img" src="../assets/sprites/frames/face_eyes.png" alt="" />
+        </div>
+        <div class="stack">
+          <span class="label">Modo</span>
+          <label class="option">
+            <input type="radio" name="mode" value="assistant" />
+            <span class="option-title">Assistente</span>
+            <span class="muted">Clique nele pra conversar com a IA</span>
+          </label>
+          <label class="option">
+            <input type="radio" name="mode" value="decor" />
+            <span class="option-title">Só decoração</span>
+            <span class="muted">Só faz companhia. Não usa IA nem pesa o PC</span>
+          </label>
+
+          <span class="label">Tamanho</span>
+          <div class="segmented" id="scale">
+            <button data-scale="2">P</button>
+            <button data-scale="3">M</button>
+            <button data-scale="4">G</button>
+            <button data-scale="5">GG</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------- IA ---------- -->
+    <section class="panel" data-panel="ai" data-title="Inteligência" data-sub="Modelo local que responde pelo mascote">
+      <div class="off-notice">A IA está desligada no modo <b>Só decoração</b>.</div>
+      <div class="server">
+        <span id="server-dot" class="dot-status"></span>
+        <span id="server-text">Verificando o Ollama…</span>
+        <button id="server-start" class="btn hidden">Iniciar Ollama</button>
+      </div>
+      <div class="list-head">
+        <span class="label">Modelos instalados no Ollama</span>
+        <button id="refresh" class="ghost" title="Atualizar lista">
+          <svg viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.3-5.7 M20 4v4h-4" /></svg>
+        </button>
+      </div>
+      <div id="models" class="models"></div>
+      <p id="model-status" class="muted"></p>
+    </section>
+
+    <!-- ---------- Baixar modelos ---------- -->
+    <section class="panel" data-panel="download" data-title="Baixar modelos" data-sub="Modelos recomendados pro MascotAI">
+      <div class="specs">
+        <svg viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="12" rx="2" /><path d="M8 10v4 M12 10v4 M16 10v4" /></svg>
+        <span id="specs-text" class="muted">Verificando seu PC…</span>
+      </div>
+      <div id="catalog" class="catalog"></div>
+      <p class="muted disclaimer">
+        Requisitos aproximados. Abaixo do mínimo o modelo até roda, mas fica lento.
+        Com placa de vídeo dedicada as respostas saem bem mais rápido.
+        Os modelos são baixados pelo Ollama e ficam salvos no seu PC.
+      </p>
+    </section>
+
+    <!-- ---------- Personalidade ---------- -->
+    <section class="panel" data-panel="persona" data-title="Personalidade" data-sub="Idioma e jeito de falar do mascote">
+      <div class="off-notice">A IA está desligada no modo <b>Só decoração</b>.</div>
+      <span class="label">Idioma das respostas</span>
+      <div id="languages" class="chips"></div>
+      <span class="label">Personalidade</span>
+      <textarea id="system" spellcheck="false" placeholder="Ex.: Você é um robozinho divertido que responde curto…"></textarea>
+    </section>
+
+    <!-- ---------- Memória ---------- -->
+    <section class="panel" data-panel="memory" data-title="Memória" data-sub="Fatos verdadeiros que o mascote sabe">
+      <div class="off-notice">A IA está desligada no modo <b>Só decoração</b>.</div>
+      <span class="label">Identidade</span>
+      <div class="locked">
+        <svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2" /><path d="M8 11V8a4 4 0 0 1 8 0v3" /></svg>
+        <ul id="identity"></ul>
+      </div>
+      <span class="label">Sobre você</span>
+      <p class="muted hint">
+        Um fato por linha: seu nome, do que você gosta, no que trabalha…
+        O que não estiver aqui, ele diz que não sabe.
+      </p>
+      <textarea id="knowledge" spellcheck="false" placeholder="- Meu nome é…&#10;- Eu trabalho com…"></textarea>
+    </section>
+
+    <!-- ---------- Avançado ---------- -->
+    <section class="panel" data-panel="advanced" data-title="Avançado" data-sub="Conexão e atalhos">
+      <label class="field">
+        <span class="label">Endereço do Ollama</span>
+        <input id="host" type="text" spellcheck="false" />
+      </label>
+      <label class="field">
+        <span class="label">Atalho pra abrir o chat</span>
+        <input id="shortcut" type="text" spellcheck="false" />
+        <small class="muted">Formato: Control+Alt+Space</small>
+      </label>
+
+      <div class="danger-zone">
+        <div>
+          <span class="option-title">Encerrar tudo</span>
+          <span class="muted">Fecha o MascotAI e o Ollama e libera a GPU e a RAM</span>
+        </div>
+        <button id="quit-all" class="btn danger">Encerrar tudo</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="settings.js"></script>
+</body>
+</html>
