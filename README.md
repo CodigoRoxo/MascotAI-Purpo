@@ -1,18 +1,38 @@
 <p align="center">
-  <img src="docs/img/anim-idle.gif" width="120" alt="MascotAI" />
+  <img src="docs/img/hero.gif" width="180" alt="MascotAI" />
 </p>
 
 <h1 align="center">MascotAI</h1>
 
 <p align="center">
-  Um mascotinho que fica no canto da tela, por cima de tudo, e responde suas perguntas usando uma IA que roda no seu próprio PC.
+  Um mascotinho que fica no canto da tela, por cima de tudo,<br />
+  e responde suas perguntas usando uma IA que roda no seu próprio PC.
 </p>
 
 <p align="center">
-  <img src="docs/img/ui-chat.png" width="300" alt="Conversando com o MascotAI" />
+  <a href="../../releases/latest"><img src="https://img.shields.io/github/v/release/CodigoRoxo/MascotAI-Purpo?label=download&color=c56cf0&style=flat-square" alt="Download" /></a>
+  <img src="https://img.shields.io/badge/Windows-10%20%7C%2011-2b2b2b?style=flat-square" alt="Windows 10 e 11" />
+  <a href="https://ollama.com"><img src="https://img.shields.io/badge/IA%20local-Ollama-2b2b2b?style=flat-square" alt="Ollama" /></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/licen%C3%A7a-MIT-2b2b2b?style=flat-square" alt="Licença MIT" /></a>
 </p>
 
----
+<p align="center">
+  <a href="#instalação">Instalação</a> ·
+  <a href="#como-usar">Como usar</a> ·
+  <a href="#configurações">Configurações</a> ·
+  <a href="#animações">Animações</a> ·
+  <a href="#próximos-passos">Próximos passos</a>
+</p>
+
+<br />
+
+<p align="center">
+  <img src="docs/img/ui-hover.png" width="250" alt="Passando o mouse" />
+  <img src="docs/img/ui-thinking.png" width="250" alt="Pensando" />
+  <img src="docs/img/ui-chat.png" width="250" alt="Respondendo" />
+</p>
+
+<br />
 
 ## A ideia
 
@@ -76,12 +96,6 @@ ollama pull llama3.2:3b
 Qualquer modelo que você já tenha no Ollama aparece na aba **Inteligência**.
 
 ## Como usar
-
-<p align="center">
-  <img src="docs/img/ui-hover.png" width="220" alt="Passando o mouse" />
-  <img src="docs/img/ui-thinking.png" width="220" alt="Pensando" />
-  <img src="docs/img/ui-chat.png" width="220" alt="Respondendo" />
-</p>
 
 | Ação | O que acontece |
 |---|---|
