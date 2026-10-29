@@ -13,7 +13,7 @@
   <a href="../../releases/latest"><img src="https://img.shields.io/github/v/release/CodigoRoxo/MascotAI-Purpo?label=download&color=c56cf0&style=flat-square" alt="Download" /></a>
   <img src="https://img.shields.io/badge/Windows-10%20%7C%2011-2b2b2b?style=flat-square" alt="Windows 10 e 11" />
   <a href="https://ollama.com"><img src="https://img.shields.io/badge/IA%20local-Ollama-2b2b2b?style=flat-square" alt="Ollama" /></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/licen%C3%A7a-MIT-2b2b2b?style=flat-square" alt="Licença MIT" /></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-2b2b2b?style=flat-square" alt="Licença MIT" /></a>
 </p>
 
 <p align="center">
